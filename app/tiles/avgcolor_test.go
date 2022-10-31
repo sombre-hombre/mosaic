@@ -55,7 +55,7 @@ func Test_NewAvgColor(t *testing.T) {
 	}
 }
 
-func Test_euclidianDistance(t *testing.T) {
+func Test_euclideanDistance(t *testing.T) {
 	tests := map[string]struct {
 		img1, img2 AvgColor
 		expected   float64
@@ -99,7 +99,7 @@ func Test_euclidianDistance(t *testing.T) {
 
 	for name, tc := range tests {
 		t.Run(name, func(t *testing.T) {
-			actual := euclidianDistance(tc.img1, tc.img2)
+			actual := euclideanDistance(tc.img1, tc.img2)
 
 			require.InDelta(t, tc.expected, actual, .5)
 		})

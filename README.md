@@ -22,7 +22,7 @@ Flags:
 
 ### Tiles
 
-Make required sized square tiles from arbitrary images located in specified folder.
+Make specified sized square tiles from arbitrary images located in specified folder.
 
 ```
 Usage:
@@ -44,7 +44,7 @@ Usage:
   mosaic create [flags]
 
 Flags:
-  -d, --distance string   Color distance algorithm: euclidian or redmean (default "redmean")
+  -d, --distance string   Color distance algorithm: euclidean or redmean (default "redmean")
   -h, --help              help for create
   -i, --in string         Source image
   -l, --library string    Path to tiles library

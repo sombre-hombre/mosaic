@@ -41,12 +41,12 @@ func NewAvgColor(img image.Image) AvgColor {
 type DistanceCalculator func(AvgColor, AvgColor) float64
 
 var (
-	ColorDistanceEuclidean DistanceCalculator = euclidianDistance
+	ColorDistanceEuclidean DistanceCalculator = euclideanDistance
 	ColorDistanceRedmean   DistanceCalculator = redMeanDistance
 )
 
-// euclidianDistance implements euclidian color distance
-func euclidianDistance(c1, c2 AvgColor) float64 {
+// euclideanDistance implements euclidean color distance
+func euclideanDistance(c1, c2 AvgColor) float64 {
 	dr, dg, db := c1.R()-c2.R(), c1.G()-c2.G(), c1.B()-c2.B()
 	return math.Sqrt(dr*dr + dg*dg + db*db)
 }
