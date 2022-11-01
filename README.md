@@ -1,6 +1,10 @@
 # mosaic
 Photo-mosaic web and cli application. Made as a part 3 of the [Go Challange](http://web.archive.org/web/20200721005949/http://golang-challenge.org/go-challenge3/).
 
+## Samples
+Original
+![[img/samples/Owl.jpg]]
+
 ## CLI
 
 ### Load
