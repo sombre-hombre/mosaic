@@ -45,12 +45,12 @@ is replaced with another picture (called a tile picture).`,
 				log.Fatalf("can't create tile library: %v", err)
 			}
 
-			mosaic, err := mosaic.Create(original, *lib)
+			m, err := mosaic.Create(original, *lib)
 			if err != nil {
 				log.Fatal(err)
 			}
 
-			if err = imaging.Save(mosaic, options.out); err != nil {
+			if err = imaging.Save(m, options.out); err != nil {
 				log.Fatalf("can't save image: %v", err)
 			}
 		},

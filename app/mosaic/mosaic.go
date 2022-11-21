@@ -34,7 +34,7 @@ func Create(original image.Image, lib tiles.Library) (image.Image, error) {
 				return nil, fmt.Errorf("can't find tile: %v", err)
 			}
 
-			draw.Draw(mosaic, tileBounds, tile, image.Point{0, 0}, draw.Src)
+			draw.Draw(mosaic, tileBounds, tile, image.Point{X: 0, Y: 0}, draw.Src)
 		}
 	}
 

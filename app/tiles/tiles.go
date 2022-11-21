@@ -4,7 +4,6 @@ import (
 	"errors"
 	"fmt"
 	"image"
-	"io/ioutil"
 	"log"
 	"math"
 	"os"
@@ -33,7 +32,7 @@ func NewLibrary(tilesDir string, tileSize int, dc DistanceCalculator) (*Library,
 		distance: dc,
 	}
 
-	files, err := ioutil.ReadDir(tilesDir)
+	files, err := os.ReadDir(tilesDir)
 	if err != nil {
 		return nil, err
 	}
@@ -71,11 +70,11 @@ func (l Library) FindTile(subImage image.Image) (image.Image, error) {
 	avg := NewAvgColor(subImage)
 	smallest := math.MaxFloat64
 	var tilePath string
-	for path, clr := range l.tiles {
+	for p, clr := range l.tiles {
 		dist := l.distance(avg, clr)
 		if dist < smallest {
 			smallest = dist
-			tilePath = path
+			tilePath = p
 		}
 	}
 
@@ -97,7 +96,7 @@ func PrepareTiles(sourceDir string, targetDir string, tileSize int) error {
 		return fmt.Errorf("can't make directory %s: %w", targetDir, err)
 	}
 
-	files, err := ioutil.ReadDir(sourceDir)
+	files, err := os.ReadDir(sourceDir)
 	if err != nil {
 		return err
 	}

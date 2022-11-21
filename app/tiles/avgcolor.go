@@ -37,7 +37,7 @@ func NewAvgColor(img image.Image) AvgColor {
 	return AvgColor{r / total, g / total, b / total}
 }
 
-// Color distance calculator
+// DistanceCalculator is a color distance calculator
 type DistanceCalculator func(AvgColor, AvgColor) float64
 
 var (
@@ -51,7 +51,7 @@ func euclideanDistance(c1, c2 AvgColor) float64 {
 	return math.Sqrt(dr*dr + dg*dg + db*db)
 }
 
-// redmeanDistance implements so called "redmean" approximation https://en.wikipedia.org/wiki/Color_difference#sRGB
+// redMeanDistance implements so called "redmean" approximation https://en.wikipedia.org/wiki/Color_difference#sRGB
 func redMeanDistance(c1, c2 AvgColor) float64 {
 	r := (c1.R() + c2.R()) / 2.0
 	dr, dg, db := c1.R()-c2.R(), c1.G()-c2.G(), c1.B()-c2.B()
