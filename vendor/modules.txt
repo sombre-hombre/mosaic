@@ -1,3 +1,6 @@
+# github.com/ajg/form v1.5.1
+## explicit
+github.com/ajg/form
 # github.com/davecgh/go-spew v1.1.1
 ## explicit
 github.com/davecgh/go-spew/spew
@@ -8,6 +11,9 @@ github.com/disintegration/imaging
 ## explicit; go 1.14
 github.com/go-chi/chi/v5
 github.com/go-chi/chi/v5/middleware
+# github.com/go-chi/render v1.0.2
+## explicit; go 1.16
+github.com/go-chi/render
 # github.com/inconshreveable/mousetrap v1.0.0
 ## explicit
 github.com/inconshreveable/mousetrap
